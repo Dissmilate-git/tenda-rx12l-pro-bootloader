@@ -52,7 +52,7 @@ if grep -Eq "CONFIG_FLASH_DEVICE_EMMC=y|_BOOT_DEVICE_EMMC=y" $ATF_DIR/configs/$A
 	multilayout=0
 else
 	# Build fixed-mtdparts by default for NAND
-	fixedparts=${FIXED_MTDPARTS:-1}
+	fixedparts=${FIXED_MTDPARTS:-0}
 	multilayout=${MULTI_LAYOUT:-0}
 	if [ "$multilayout" = "1" ]; then
 		UBOOT_CFG="${SOC}_${BOARD}_multi_layout_defconfig"
